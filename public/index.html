@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OctalTron- Tron Smart Contract</title>
+    <link rel="shortcut icon" type="image/png" href="./assets/images/images/logo/icon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+      body {
+        width: 100%;
+      }
+       .price-table {
+            margin-bottom: 45px;
+       }
+       #particles{
+          position: absolute;
+          z-index: inherit;
+          width: 90%;
+       }
+    </style>
+    <script src="./assets/js/jquery.min.js"></script>
+    
+    <script src="./assets/front/2/js/modernizr.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+</head>
+<body  data-spy="scroll">
+
+<div class="animation-element">
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div>
+
+      <script src="./jquery/jquery.js"></script>
+      <script src="./jquery/main.js"></script>
+  </body>
+
+<style type="text/css">
+    li.export-main {
+        visibility: hidden;
+    }
+</style>
+
+<!--jquery script load-->
+<script src="./assets/front/js/jquery.js"></script> 
+
+<script src="./assets/front/js/bootstrap.min.js"></script>
+
+<!-- Map Js File Load -->
+<script src="./assets/front/js/map-script.php?color=ea0117"></script>
+<!-- Highlight script load-->
+<script src="./assets/front/js/highlight.min.js"></script>
+<!--Jquery Ui Slider script load-->
+<script src="./assets/front/js/jquery-ui-slider.min.js"></script>
+<!--Circleful Js File Load-->
+<script src="./assets/front/js/jquery.circliful.js"></script>
+<!--CounterUp script load-->
+<script src="./assets/front/js/jquery.counterup.min.js"></script>
+<!-- Ripples  script load-->
+<script src="./assets/front/js/jquery.ripples-min.js"></script>
+<!--Slick Nav Js File Load-->
+<script src="./assets/front/js/jquery.slicknav.min.js"></script>
+<!--Lightcase Js File Load-->
+<script src="./assets/front/js/lightcase.js"></script>
+<!--particle Js File Load-->
+<script src="./assets/front/js/particles.min.js"></script>
+<!--particle custom Js File Load-->
+<script src="./assets/front/js/particles-custom.js"></script>
+<!--RainDrops script load-->
+<script src="./assets/front/js/raindrops.js"></script>
+<!--Easing script load-->
+<script src="./assets/front/js/easing-min.js"></script>
+<!--Slick Slider Js File Load-->
+<script src="./assets/front/js/slick.min.js"></script>
+<!--Swiper script load-->
+<script src="./assets/front/js/swiper.min.js"></script>
+<!--WOW script load-->
+<script src="./assets/front/js/wow.min.js"></script>
+<!--WayPoints script load-->
+<script src="./assets/front/js/waypoints.min.js"></script>
+<script type="text/javascript" src="./assets/js/ion.rangeSlider.js"></script>
+    <script type="text/javascript">
+        $(window).load(function() {
+            var wow = new WOW({
+                boxClass: 'wow',
+                animateClass: 'animated',
+                offset: 0,
+                mobile: true,
+                live: true
+            });
+            wow.init();
+        });
+ </script>
+<script>
+        $.each($('.slider-input'), function() {
+            var $t = $(this),
+
+                    from = $t.data('from'),
+                    to = $t.data('to'),
+
+                    $dailyProfit = $($t.data('dailyprofit')),
+                    $totalProfit = $($t.data('totalprofit')),
+
+                    $val = $($t.data('valuetag')),
+
+                    perDay = $t.data('perday'),
+                    perYear = $t.data('peryear');
+
+
+            $t.ionRangeSlider({
+                input_values_separator: ";",
+                prefix: '$ ',
+                hide_min_max: true,
+                force_edges: true,
+                onChange: function(val) {
+                    $val.val( '$ ' + val.from);
+
+                    var profit = (val.from * perDay / 100).toFixed(1);
+                    profit  = '$ ' + profit.replace('.', '.') ;
+                    $dailyProfit.text(profit) ;
+
+                    profit = ( (val.from * perDay / 100)* perYear ).toFixed(1);
+                    profit  =  '$ ' + profit.replace('.', '.');
+                    $totalProfit.text(profit);
+
+                }
+            });
+        });
+        $('.invest-type__profit--val').on('change', function(e) {
+
+            var slider = $($(this).data('slider')).data("ionRangeSlider");
+
+            slider.update({
+                from: $(this).val().replace('$ ', "")
+            });
+        })
+</script>
+<!--Main js file load-->
+<script src="./assets/front/js/main.js"></script>
+
+<script src="./assets/front/2/js/main.js"></script>
+<!-- <script src="./assets/js/main.js"></script> -->
+<!--swal alert message-->
+
+<!--end swal alert message-->
+<script>
+var mobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+
+hljs.initHighlightingOnLoad();
+hljs.configure({useBR: true});
+jQuery('#raindrops').raindrops({color:'#fff',canvasHeight:5});
+jQuery('#raindrops-green').raindrops({color:'#ea0117 ',canvasHeight:5});
+
+</script>
+  
+</html>
